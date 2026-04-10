@@ -1,6 +1,9 @@
 # Express 5.x Compatibility Deviations
 
-`express-clr` is implemented on ASP.NET Core primitives and targets maximum practical Express API coverage.
+`express-clr` is retired. This page is kept only as an archival note about the
+old C# implementation.
+
+The active first-party package is `@tsonic/express`.
 
 Known deviations:
 
@@ -13,4 +16,5 @@ Known deviations:
 7. Delegate handler dispatch is reflection-free; unsupported delegate signatures are ignored instead of reflection-invoked.
 8. JSON body/object serialization is reflection-free. Fully supported shapes are primitives, `Dictionary<string, object?>`, arrays/lists, and `JsonElement`/`JsonDocument`. Arbitrary CLR objects (including anonymous objects) are not reflection-serialized.
 
-The test suite tracks API surface and core runtime semantics. Deviations are expected to shrink over time.
+The active behavior and compatibility story now belong to `@tsonic/express`,
+not this retired repo.

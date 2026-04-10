@@ -1,6 +1,9 @@
 # Express 5.x API Test Matrix
 
-This matrix tracks runtime coverage for the current `express-clr` API surface.
+`express-clr` is retired. This matrix is kept only as an archival reference for
+the old C# implementation.
+
+The active first-party package is `@tsonic/express`.
 
 ## Coverage Gate
 

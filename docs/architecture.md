@@ -1,6 +1,9 @@
 # Runtime Architecture
 
-This document describes how `express-clr` maps Express-style APIs onto ASP.NET Core.
+`express-clr` is retired. This document is kept only as an archival reference
+for the old C# implementation.
+
+The active first-party package is `@tsonic/express`.
 
 ## Design Principles
 
@@ -69,7 +72,7 @@ Behavior is implemented close to Express semantics, with remaining differences t
 - Relative paths can be resolved via `root` options.
 - Error callbacks follow Express-like signatures.
 
-## Runtime vs Types Repo
+## Active docs
 
-- Runtime semantics belong in `express-clr` docs.
-- Generated TypeScript package and release workflow belong in `express` docs.
+- Active runtime/package docs belong in `express`.
+- This page documents the retired implementation only.

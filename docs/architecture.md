@@ -28,6 +28,16 @@ This document describes how `express-clr` maps Express-style APIs onto ASP.NET C
 4. Matching handlers execute with Express-style `next(...)` control flow.
 5. `Response` writes headers/body through `HttpContext.Response`.
 
+## Handler Dispatch
+
+- Request handlers, error handlers, param handlers, and middleware use named
+  delegate shapes.
+- Unsupported delegate signatures are ignored rather than invoked through
+  reflection.
+- `NextFunction` represents continuation, error propagation, and router control
+  flow.
+- `useError(...)` separates error middleware from normal middleware overloads.
+
 ## Routing Model
 
 - Route and middleware registrations are stored as ordered layers.
@@ -54,6 +64,9 @@ Built-in middleware surfaces:
 - `express.text(...)`
 - `express.urlencoded(...)`
 - `express.static(...)`
+- cookie helpers
+- CORS helpers
+- multipart uploads
 
 Behavior is implemented close to Express semantics, with remaining differences tracked in `docs/deviations.md`.
 

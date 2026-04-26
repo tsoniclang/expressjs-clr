@@ -1,12 +1,12 @@
 # Express 5.x API Test Matrix
 
-This matrix tracks runtime coverage for the current `express-clr` API surface.
+This matrix tracks runtime coverage for the `express-clr` API surface.
 
 ## Coverage Gate
 
 - Command: `npm run test:coverage`
 - Thresholds: `line=100`, `branch=100`, `method=100`
-- Current result: `100% / 100% / 100%` on `express` module
+- Result expectation: `100% / 100% / 100%` on the `express` module
 
 ## NativeAOT Gate
 

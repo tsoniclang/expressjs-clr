@@ -41,7 +41,8 @@ Validation command:
 dotnet publish src/express/express.csproj -c Release -r linux-x64 -p:PublishAot=true -warnaserror
 ```
 
-Current runtime avoids `DynamicInvoke` and reflection-based `System.Text.Json` serialization/deserialization paths.
+The runtime avoids `DynamicInvoke` and reflection-based `System.Text.Json`
+serialization/deserialization paths.
 
 ## Test
 
@@ -71,6 +72,18 @@ Some HTTP verbs require C#-safe identifiers:
 - `m_search()` maps to `M-SEARCH`
 
 For exact-string verbs, use `method("...")`.
+
+## API Shape
+
+- Named handler delegates model request handlers, error handlers, param
+  handlers, and middleware without reflection invocation.
+- `NextFunction` carries Express-style continuation control.
+- Middleware registration uses strict-friendly overloads; error middleware uses
+  `useError(...)`.
+- Built-in helpers cover JSON, raw/text/urlencoded bodies, static files,
+  cookies, CORS, and multipart uploads.
+- `listen(...)` keeps the hosted process alive through the managed server
+  handle.
 
 ## License
 
